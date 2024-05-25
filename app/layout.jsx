@@ -1,7 +1,7 @@
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Footer from "../components/Footer";
+import NavbarMain from "../components/Navbar";
 
 const dm = DM_Sans({ subsets: ["latin"] });
 
@@ -14,10 +14,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${dm.className} overflow-x-hidden`}>
-        <Navbar />
+        <NavbarMain />
         {children}
         <Footer />
-        </body>
+      </body>
     </html>
   );
 }
