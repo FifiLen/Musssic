@@ -72,10 +72,10 @@ export default function NavbarMain() {
             <Link href={"/lineup"} className="hover:text-orange-200">
               Line Up
             </Link>
-            <Link href={"/"} className="hover:text-orange-200">
+            <Link href={"/ticket"} className="hover:text-orange-200">
               Tickets
             </Link>
-            <Link href={"/"} className="hover:text-orange-200">
+            <Link href={"/faq"} className="hover:text-orange-200">
               FAQ
             </Link>
             <Link href={"/"} className="hover:text-orange-200">
@@ -84,7 +84,7 @@ export default function NavbarMain() {
           </div>
 
           <div className="flex gap-3 text-lg font-semibold tracking-tighter text-orange-400">
-            <Link href={"/panel"}>
+            <Link href={"/dashboard"}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

@@ -1,7 +1,7 @@
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
-import Footer from "../components/Footer";
-import NavbarMain from "../components/Navbar";
+import ClientWrapper from "../components/ClientWrapper";
+import { TicketProvider } from "../context/TicketContext";
 
 const dm = DM_Sans({ subsets: ["latin"] });
 
@@ -14,9 +14,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${dm.className} overflow-x-hidden`}>
-        <NavbarMain />
-        {children}
-        <Footer />
+        <TicketProvider>
+          <ClientWrapper>{children}</ClientWrapper>
+        </TicketProvider>
       </body>
     </html>
   );
