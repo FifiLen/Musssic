@@ -79,3 +79,12 @@
   background-image: url("/assets/images/siteBg.svg");
   background-repeat: no-repeat;
 }
+
+.ticket {
+  background-image: url("/assets/images/siteBg.svg");
+  background-repeat: no-repeat;
+  background-size: cover; /* Ensures the image covers the entire area */
+  background-position: center; /* Centers the image */
+  height: 100%; /* Ensures the div takes the full height of the container */
+  width: 70%; /* Ensures the div takes the full width of the container */
+}

@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Monoton } from "next/font/google";
 import Link from "next/link";
+import { RiMoneyDollarBoxFill } from "react-icons/ri";
 
 const monoton = Monoton({ subsets: ["latin"], weight: ["400"] });
 
@@ -36,29 +37,32 @@ export default function NavbarMain() {
       }`}
     >
       <div className="flex justify-between w-full">
-        <div>
-          <p className={`${monoton.className} text-5xl font-medium text-white`}>
-            musssick<span className="text-orange-400">.</span>
-          </p>
-          <div className={`flex justify-start items-center gap-4`}>
+        <Link href="/">
+          <div>
             <p
-              className={`text-5xl font-bold tracking-tighter text-orange-400`}
+              className={`${monoton.className} text-5xl font-medium text-white`}
             >
-              Festival
+              musssick<span className="text-orange-400">.</span>
             </p>
-            <div>
+            <div className={`flex justify-start items-center gap-4`}>
               <p
-                className={`text-lg text-white font-bold tracking-tighter -mb-2`}
+                className={`text-5xl font-bold tracking-tighter text-orange-400`}
               >
-                WARSAW
+                Festival
               </p>
-              <p className={`text-lg text-white font-bold tracking-tighter`}>
-                7-9.08.2024
-              </p>
+              <div>
+                <p
+                  className={`text-lg text-white font-bold tracking-tighter -mb-2`}
+                >
+                  WARSAW
+                </p>
+                <p className={`text-lg text-white font-bold tracking-tighter`}>
+                  7-9.08.2024
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-
+        </Link>
         {/* Menu na większych ekranach */}
         <div
           className={`hidden md:flex gap-28 transition-all duration-500 ease-in-out ${
@@ -78,27 +82,14 @@ export default function NavbarMain() {
             <Link href={"/faq"} className="hover:text-orange-200">
               FAQ
             </Link>
-            <Link href={"/"} className="hover:text-orange-200">
+            <Link href={"/contact"} className="hover:text-orange-200">
               Contact
             </Link>
           </div>
 
           <div className="flex gap-3 text-lg font-semibold tracking-tighter text-orange-400">
             <Link href={"/dashboard"}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="w-7 h-7"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                />
-              </svg>
+              <RiMoneyDollarBoxFill className="w-7 h-7" />
             </Link>
 
             <p className="underline-offset-4 underline">EN</p>

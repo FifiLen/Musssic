@@ -7,6 +7,7 @@ import { BsTwitterX } from "react-icons/bs";
 import { IoTicket } from "react-icons/io5";
 import { BsArrowRightSquareFill } from "react-icons/bs";
 import { BsArrowDownSquareFill } from "react-icons/bs";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -56,7 +57,7 @@ export default function Hero() {
         </div>
 
         <div className="col-span-1 text-white space-y-6 mr-6 flex justify-center items-center justify-self-end p-3 py-5 bg-orange-400/20 h-fit">
-          <div className="flex flex-col gap-3">
+          <Link href={"/dashboard"} className="flex flex-col gap-3">
             <p
               className="text-2xl font-bold tracking-tighter"
               style={{ writingMode: "vertical-rl" }}
@@ -64,7 +65,7 @@ export default function Hero() {
               Buy A Ticket
             </p>
             <IoTicket className="w-7 h-7" />
-          </div>
+          </Link>
         </div>
       </div>
     </div>

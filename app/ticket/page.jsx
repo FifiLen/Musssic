@@ -1,69 +1,89 @@
+import Link from "next/link";
 import React from "react";
-import { IoTicket } from "react-icons/io5";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+
+const tickets = [
+  {
+    title: "General",
+    price: "$99",
+    description: "Great for enjoying the full festival experience.",
+    features: [
+      "Access to all days of the festival",
+      "General seating",
+      "Complimentary festival merchandise",
+    ],
+  },
+  {
+    title: "VIP Pass",
+    price: "$199",
+    description: "For those who want exclusive perks and access.",
+    features: [
+      "Access to all days of the festival",
+      "VIP seating",
+      "Backstage passes",
+      "Complimentary drinks",
+      "Meet-and-greet with performers",
+    ],
+  },
+  {
+    title: "Group Package",
+    price: "$449",
+    description: "Special pricing for groups of 5 or more.",
+    features: [
+      "Access to all days of the festival",
+      "Group seating",
+      "Discount on merchandise",
+      "Special group activities",
+    ],
+  },
+];
+
+const TicketCard = ({ ticket }) => (
+  <div className="bg-gradient-to-br from-zinc-950 via-black to-orange-400/40 text-white border border-orange-400 p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-start w-full max-w-xs">
+    <h3 className="text-lg text-zinc-400 tracking-tighter font-medium mb-6">
+      {ticket.title}
+    </h3>
+    <p className="text-5xl font-medium tracking-tight mb-4">{ticket.price}</p>
+    <p className="text-gray-400 mb-6">{ticket.description}</p>
+    <Link href={"/dashboard"} className="w-full">
+      <button className="bg-orange-500 text-white tracking-tighter font-medium py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors duration-300 flex items-center justify-center mb-6">
+        Proceed to Purchase
+      </button>
+    </Link>
+    <div className="flex items-center w-full mb-4">
+      <div className="flex-grow h-px bg-gray-600"></div>
+      <span className="px-4 text-gray-400 text-sm tracking-wider">
+        FEATURES
+      </span>
+      <div className="flex-grow h-px bg-gray-600"></div>
+    </div>
+    <ul className="w-full">
+      {ticket.features.map((feature, index) => (
+        <li key={index} className="flex items-center mb-2">
+          <span className="text-zinc-200 mr-2">
+            <IoIosCheckmarkCircleOutline />
+          </span>
+          <span className="text-gray-400">{feature}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
 
 const TicketPurchase = () => {
   return (
-    <div className="py-52 bg-black min-h-screen">
-      <div className="max-w-7xl mx-auto space-y-10">
-        <h2 className="text-white text-6xl font-bold tracking-tighter">
-          Buy Tickets
+    <div className="py-20 md:py-52 bg-black min-h-screen px-4">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-white text-4xl md:text-6xl font-bold tracking-tighter mb-3 text-center">
+          Ticket Options
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          <div className="bg-black border-2 border-orange-400 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-            <h3 className="text-2xl font-bold text-orange-500 tracking-tighter">
-              General Admission
-            </h3>
-            <p className="text-white mt-4">
-              Access to all days of the festival.
-            </p>
-            <p className="text-white mt-4 font-bold text-3xl">$99</p>
-            <button className="mt-6 bg-orange-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-600 transition-all duration-300 flex items-center justify-center">
-              <IoTicket className="mr-2" />
-              Buy Now
-            </button>
-          </div>
-
-          <div className="bg-black border-2 border-orange-400 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-            <h3 className="text-2xl font-bold text-orange-500 tracking-tighter">
-              VIP Pass
-            </h3>
-            <p className="text-white mt-4">Enjoy exclusive access and perks.</p>
-            <p className="text-white mt-4 font-bold text-3xl">$199</p>
-            <button className="mt-6 bg-orange-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-600 transition-all duration-300 flex items-center justify-center">
-              <IoTicket className="mr-2" />
-              Buy Now
-            </button>
-          </div>
-
-          <div className="bg-black border-2 border-orange-400 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-            <h3 className="text-2xl font-bold text-orange-500 tracking-tighter">
-              Group Package
-            </h3>
-            <p className="text-white mt-4">
-              Special pricing for groups of 5 or more.
-            </p>
-            <p className="text-white mt-4 font-bold text-3xl">$450</p>
-            <button className="mt-6 bg-orange-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-600 transition-all duration-300 flex items-center justify-center">
-              <IoTicket className="mr-2" />
-              Buy Now
-            </button>
-          </div>
-        </div>
-        <div className="bg-black border-2 border-orange-400 p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 mt-10">
-          <h3 className="text-2xl font-bold text-orange-500 tracking-tighter">
-            Order Summary
-          </h3>
-          <p className="text-white mt-4">
-            Review your order and proceed to payment.
-          </p>
-          <div className="text-white mt-4">
-            <p className="font-bold">Ticket Type: VIP Pass</p>
-            <p className="font-bold">Quantity: 2</p>
-            <p className="font-bold text-3xl mt-4">Total: $398</p>
-          </div>
-          <button className="mt-6 bg-orange-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-orange-600 transition-all duration-300 flex items-center justify-center">
-            Proceed to Payment
-          </button>
+        <p className="text-zinc-600 tracking-tighter text-xl md:text-2xl text-center mb-12">
+          To buy a specified ticket, click proceed to purchase
+        </p>
+        <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+          {tickets.map((ticket, index) => (
+            <TicketCard key={index} ticket={ticket} />
+          ))}
         </div>
       </div>
     </div>

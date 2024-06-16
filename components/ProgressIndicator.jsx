@@ -1,25 +1,23 @@
 import React from "react";
-import { useTicket } from "../context/TicketContext";
 
-const ProgressIndicator = () => {
-  const { currentStep, steps } = useTicket();
-
+const ProgressIndicator = ({ steps, currentStep }) => {
   return (
-    <div className="flex justify-center my-8">
+    <div className="hidden justify-center my-8">
       {steps.map(({ step, label }) => (
         <div
           key={step}
           className={`flex items-center ${step !== steps.length ? "mr-4" : ""}`}
         >
           <div
-            className={`flex items-center justify-center w-8 h-8 rounded-full ${
-              currentStep >= step ? "bg-orange-500" : "bg-gray-500"
-            }`}
+            className={`w-8 h-8 rounded-full flex items-center justify-center ${
+              step === currentStep ? "bg-orange-500" : "bg-gray-500"
+            } text-white`}
           >
-            <span className="text-white">{step}</span>
+            {step}
           </div>
-          <span className="ml-2 text-white">{label}</span>
-          {step !== steps.length && <span className="mx-2 text-white">→</span>}
+          {step !== steps.length && (
+            <div className="flex-grow border-t-2 border-gray-500 mx-2"></div>
+          )}
         </div>
       ))}
     </div>

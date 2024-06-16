@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${dm.className} overflow-x-hidden`}>
+      <body className={`${dm.className} overflow-x-hidden bg-black`}>
         <TicketProvider>
           <ClientWrapper>{children}</ClientWrapper>
         </TicketProvider>

@@ -58,7 +58,7 @@ export default function About() {
               </h4>
             </div>
             <div className=" mt-28">
-              <img src={"/assets/images/heroImage.png"} width={600} />
+              <img src={"/assets/images/aboutF.jpg"} width={600} />
               <h4 className=" text-orange-400 tracking-tighter font-black text-6xl my-4">
                 Going International
               </h4>
@@ -125,7 +125,7 @@ export default function About() {
               <h4 className=" text-orange-400 tracking-tighter font-black text-6xl">
                 2023 · Looking Forward
               </h4>
-              <img src={"/assets/images/heroImage.png"} width={600} />
+              <img src={"/assets/images/about.jpg"} width={600} />
 
               <p className=" font-semibold tracking-tighter w-[52%] text-lg">
                 The global pandemic posed unprecedented challenges in 2021, but
@@ -135,7 +135,7 @@ export default function About() {
                 valuable lessons that continue to shape our festival's future.
               </p>
               <img
-                src={"/assets/images/heroImage.png"}
+                src={"/assets/images/aboutF1.jpg"}
                 width={600}
                 className="ml-96"
               />
