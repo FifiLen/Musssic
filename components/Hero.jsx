@@ -44,9 +44,11 @@ export default function Hero() {
                 EchoVerse
               </h2>
               <div className=" flex justify-normal items-center gap-3 pt-36">
-                <p className="text-xl font-bold text-orange-400 tracking-tighter ">
-                  About Performer
-                </p>
+                <Link href={"/lineup"}>
+                  <p className="text-xl font-bold text-orange-400 tracking-tighter ">
+                    Check the whole line-up
+                  </p>
+                </Link>
                 <BsArrowRightSquareFill className="w-7 h-7 text-orange-400" />
               </div>
             </div>
@@ -57,7 +59,7 @@ export default function Hero() {
         </div>
 
         <div className="col-span-1 text-white space-y-6 mr-6 flex justify-center items-center justify-self-end p-3 py-5 bg-orange-400/20 h-fit">
-          <Link href={"/dashboard"} className="flex flex-col gap-3">
+          <Link href={"/payment"} className="flex flex-col gap-3">
             <p
               className="text-2xl font-bold tracking-tighter"
               style={{ writingMode: "vertical-rl" }}

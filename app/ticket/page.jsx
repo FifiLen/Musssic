@@ -45,7 +45,7 @@ const TicketCard = ({ ticket }) => (
     </h3>
     <p className="text-5xl font-medium tracking-tight mb-4">{ticket.price}</p>
     <p className="text-gray-400 mb-6">{ticket.description}</p>
-    <Link href={"/dashboard"} className="w-full">
+    <Link href={"/payment"} className="w-full">
       <button className="bg-orange-500 text-white tracking-tighter font-medium py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors duration-300 flex items-center justify-center mb-6">
         Proceed to Purchase
       </button>

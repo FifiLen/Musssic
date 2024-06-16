@@ -26,7 +26,7 @@ export default function About() {
               <h4 className=" text-orange-400 tracking-tighter font-black text-6xl">
                 2010 · The Beginning
               </h4>
-              <p className=" font-semibold tracking-tighter w-1/2 text-lg">
+              <p className=" font-semibold tracking-tighter text-zinc-300 w-1/2 text-lg">
                 Our festival was founded in 2010 with a simple yet powerful
                 vision: to create a space where people from all walks of life
                 could come together to celebrate art, music, and culture. What

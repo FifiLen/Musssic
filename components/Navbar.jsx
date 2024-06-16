@@ -88,7 +88,7 @@ export default function NavbarMain() {
           </div>
 
           <div className="flex gap-3 text-lg font-semibold tracking-tighter text-orange-400">
-            <Link href={"/dashboard"}>
+            <Link href={"/payment"}>
               <RiMoneyDollarBoxFill className="w-7 h-7" />
             </Link>
 
